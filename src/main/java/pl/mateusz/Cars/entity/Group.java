@@ -1,4 +1,4 @@
-package pl.mateusz.Cars.models;
+package pl.mateusz.Cars.entity;
 
 import javax.persistence.*;
 

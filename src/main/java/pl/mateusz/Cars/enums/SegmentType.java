@@ -1,4 +1,4 @@
-package pl.mateusz.Cars.models;
+package pl.mateusz.Cars.enums;
 
 public enum SegmentType {
 

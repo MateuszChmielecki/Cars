@@ -1,19 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Update Car Form</title>
-    <style>
-        .error {
-            color: red;
-        }
-    </style>
+    <title>Title</title>
 </head>
 <body>
-<h1>update</h1>
-
-
+<a href="/deleteCar/${id}">USUN</a>
+<a href="/listCar">NIE USUWAJ</a>
 
 </body>
 </html>

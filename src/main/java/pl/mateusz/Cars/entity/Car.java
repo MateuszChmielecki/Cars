@@ -1,6 +1,11 @@
-package pl.mateusz.Cars.models;
+package pl.mateusz.Cars.entity;
+
+import pl.mateusz.Cars.enums.SegmentType;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -10,12 +15,19 @@ public class Car {
     private Long id;
     @ManyToOne
     private Brand brand;
+    @NotEmpty
     private String model;
+    @NotEmpty
     private String modelCode;
+    @Min(1900)
+    @Max(2030)
     private Integer productionYearFrom;
+    @Min(1900)
+    @Max(2030)
     private Integer productionYearTo;
     @Enumerated(EnumType.STRING)
     private SegmentType carSegment;
+
     private String carPicture;
 
     public Car(Long id, Brand brand, String model, String modelCode, Integer productionYearFrom, Integer productionYearTo, SegmentType carSegment, String carPicture) {
