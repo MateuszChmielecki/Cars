@@ -33,10 +33,19 @@
             <td>${item.productionYearTo}</td>
             <td>${item.carSegment}</td>
             <td>${item.carPicture}</td>
-            <td><a href="/deleteCar/${item.id}">delete</a></td>
+            <td><a href="/safetyDeleteCar/${item.id}">delete</a></td>
             <td><a href="/updateCar/${item.id}">update</a></td>
         </tr>
     </c:forEach>
+    <tr>
+        <td><a href="/addCar">Add Car</a></td>
+    </tr>
+    <tr>
+        <td><a href="/listBrand">Brand list</a></td>
+    </tr>
+    <tr>
+        <td><a href="/listGroup">Group list</a></td>
+    </tr>
 </table>
 
 </body>

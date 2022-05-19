@@ -28,5 +28,8 @@
 
     <input type="submit">
 </form:form>
+<tr>
+    <td><a href="/listBrand">Cancel</a></td>
+</tr>
 </body>
 </html>

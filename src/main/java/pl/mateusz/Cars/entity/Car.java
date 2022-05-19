@@ -19,11 +19,9 @@ public class Car {
     private String model;
     @NotEmpty
     private String modelCode;
-    @Min(1900)
-    @Max(2030)
+    @Min(1886)
     private Integer productionYearFrom;
-    @Min(1900)
-    @Max(2030)
+    @Min(1886)
     private Integer productionYearTo;
     @Enumerated(EnumType.STRING)
     private SegmentType carSegment;

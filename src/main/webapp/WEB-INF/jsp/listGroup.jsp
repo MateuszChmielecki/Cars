@@ -18,11 +18,19 @@
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.country}</td>
-            <td><a href="/saftydelete/${item.id}">delete</a></td>
-            <td><a href="/update/${item.id}">update</a></td>
-
+            <td><a href="/safetyDeleteGroup/${item.id}">delete</a></td>
+            <td><a href="/updateGroup/${item.id}">update</a></td>
         </tr>
     </c:forEach>
+    <tr>
+        <td><a href="/addGroup">Add Group</a></td>
+    </tr>
+    <tr>
+        <td><a href="/listBrand">Brand list</a></td>
+    </tr>
+    <tr>
+        <td><a href="/listCar">Car list</a></td>
+    </tr>
 </table>
 
 </body>

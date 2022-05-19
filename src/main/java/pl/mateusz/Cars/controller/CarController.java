@@ -71,10 +71,15 @@ public class CarController {
         return "redirect:/listCar";
     }
 
-    @GetMapping("deleteCar/{id}")
-    public String deleteCar(@PathVariable String id, Model model){
+    @GetMapping("safetyDeleteCar/{id}")
+    public String safetyDeleteCar(@PathVariable String id, Model model){
         model.addAttribute("id", id);
-        carService.delete(Long.parseLong(id));
         return "deleteCar";
+    }
+
+    @GetMapping("deleteCar/{id}")
+    public String deleteCar(@PathVariable String id){
+        carService.delete(Long.parseLong(id));
+        return "redirect:/listCar";
     }
 }

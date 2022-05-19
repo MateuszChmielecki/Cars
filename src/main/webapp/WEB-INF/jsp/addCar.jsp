@@ -47,5 +47,8 @@
     <br>
     <input type="submit">
 </form:form>
+<tr>
+    <td><a href="/listCar">Cancel</a></td>
+</tr>
 </body>
 </html>

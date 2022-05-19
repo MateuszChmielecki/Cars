@@ -29,16 +29,6 @@ public class HomeController {
         this.groupService = groupService;
     }
 
-
-
-
-
-
-
-
-
-
-
 }
 
 
