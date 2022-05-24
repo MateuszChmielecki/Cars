@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <html>
 <head>
@@ -12,6 +13,10 @@
     </style>
 </head>
 <body>
+<sec:authorize access="isAuthenticated()">
+    <p>Zalogowany jako: <sec:authentication property="principal.username"/></p>
+    <p>Posiada role: <sec:authentication property="authorities"/></p>
+</sec:authorize>
 <%--@elvariable id="car" type="pl.mateusz.Cars.entity.Car"--%>
 <form:form modelAttribute="car" method="post">
     <label for="brand">Brand</label>
@@ -48,7 +53,7 @@
     <input type="submit">
 </form:form>
 <tr>
-    <td><a href="/listCar">Cancel</a></td>
+    <td><a href="/Cars/listCar">Cancel</a></td>
 </tr>
 </body>
 </html>

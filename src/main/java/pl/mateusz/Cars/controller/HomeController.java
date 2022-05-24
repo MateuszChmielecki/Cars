@@ -17,6 +17,7 @@ import javax.validation.Valid;
 
 
 @Controller
+@RequestMapping(path="/Cars")
 public class HomeController {
 
     private final CarService carService;
@@ -28,6 +29,14 @@ public class HomeController {
         this.brandService = brandService;
         this.groupService = groupService;
     }
+
+    @GetMapping("/")
+    @ResponseBody
+    public String home() { return "redirect:/Cars/listCar"; }
+
+    @GetMapping("/about")
+    @ResponseBody
+    public String about() { return "Here you can find some details for logged users"; }
 
 }
 

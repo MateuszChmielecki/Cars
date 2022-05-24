@@ -3,7 +3,6 @@ package pl.mateusz.Cars.entity;
 import pl.mateusz.Cars.enums.SegmentType;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 

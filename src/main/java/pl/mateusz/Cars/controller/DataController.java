@@ -1,7 +1,9 @@
 package pl.mateusz.Cars.controller;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.mateusz.Cars.entity.Brand;
 import pl.mateusz.Cars.entity.Car;
@@ -12,6 +14,8 @@ import pl.mateusz.Cars.services.CarService;
 import pl.mateusz.Cars.services.GroupService;
 
 @Controller
+@RequestMapping(path="/Admin")
+@Secured("ROLE_ADMIN")  // dostep do calego kontrollera ma tylko admin
 public class DataController {
     private final CarService carService;
     private final GroupService groupService;
@@ -24,7 +28,7 @@ public class DataController {
     }
 
     @GetMapping("/data")
-    public String home() {
+    public String data() {
         Group vw = new Group(1L, "Volkswagen AG", "Germany");
         groupService.save(vw);
         Group bmw = new Group(2L, "BMW", "Germany");
@@ -47,9 +51,10 @@ public class DataController {
         brandService.save(porsche);
         Brand seat = new Brand(6L, "Seat", vw, "Spain");
         brandService.save(seat);
+
         Car audiA38l = new Car(1L, volkswagen,"A3", "8L", 1996, 2003, SegmentType.C,"zdjecie");
         carService.save(audiA38l);
-        return "redirect:/listCar";
+        return "redirect:/Cars/listCar";
     }
 
     @GetMapping("/home_reps")
