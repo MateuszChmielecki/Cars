@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import pl.mateusz.Cars.entity.Group;
 @Repository
 public interface GroupRepository extends JpaRepository<Group, Long> {
-
+    Group findByName(String name);
 }

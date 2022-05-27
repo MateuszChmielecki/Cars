@@ -1,6 +1,5 @@
 package pl.mateusz.Cars.controller;
 
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,6 @@ import pl.mateusz.Cars.services.GroupService;
 
 @Controller
 @RequestMapping(path="/Admin")
-@Secured("ROLE_ADMIN")  // dostep do calego kontrollera ma tylko admin
 public class DataController {
     private final CarService carService;
     private final GroupService groupService;
@@ -54,6 +52,7 @@ public class DataController {
 
         Car audiA38l = new Car(1L, volkswagen,"A3", "8L", 1996, 2003, SegmentType.C,"zdjecie");
         carService.save(audiA38l);
+
         return "redirect:/Cars/listCar";
     }
 

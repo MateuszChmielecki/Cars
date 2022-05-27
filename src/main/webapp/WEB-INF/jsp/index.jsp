@@ -1,5 +1,6 @@
 <h2>
 
-    Cars :)
+    Cars :)<br>
+    <a href="/login">Sign In</a>
 
 </h2>

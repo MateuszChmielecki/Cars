@@ -23,7 +23,6 @@ public class Brand {
 
     }
 
-
     public Long getId() {
         return id;
     }

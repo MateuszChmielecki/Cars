@@ -18,9 +18,9 @@ public class Car {
     private String model;
     @NotEmpty
     private String modelCode;
-    @Min(1886)
+    @Min(value = 1886, message = "number min 1886")
     private Integer productionYearFrom;
-    @Min(1886)
+    @Min(value = 1886, message = "number min 1886")
     private Integer productionYearTo;
     @Enumerated(EnumType.STRING)
     private SegmentType carSegment;

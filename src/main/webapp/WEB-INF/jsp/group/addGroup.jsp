@@ -13,19 +13,17 @@
     </style>
 </head>
 <body>
-<sec:authorize access="isAuthenticated()">
-    <p>Zalogowany jako: <sec:authentication property="principal.username"/></p>
-    <p>Posiada role: <sec:authentication property="authorities"/></p>
-</sec:authorize>
+<%@include file="../fragments/infoRole.jsp" %>
+<%@include file="../fragments/logOut.jsp" %>
 <%--@elvariable id="group" type="pl.mateusz.Cars.entity.Group"--%>
 <form:form modelAttribute="group" method="post">
 
     <label for="name">Name</label>
-    <form:input path="name"/>${group.name}
+    <form:input path="name"/>
     <form:errors path="name" cssClass="error" />
     <br>
     <label for="country">Country</label>
-    <form:input path="country"/>${group.country}
+    <form:input path="country"/>
     <form:errors path="country" cssClass="error" />
 
     <input type="submit">

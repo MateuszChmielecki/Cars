@@ -13,4 +13,5 @@ public interface GroupService{
     void save(Group group);
     void delete(Long id);
     void update(Group group);
+    Group findByName(String name);
 }

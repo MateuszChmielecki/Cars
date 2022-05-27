@@ -13,10 +13,9 @@
     </style>
 </head>
 <body>
-<sec:authorize access="isAuthenticated()">
-    <p>Zalogowany jako: <sec:authentication property="principal.username"/></p>
-    <p>Posiada role: <sec:authentication property="authorities"/></p>
-</sec:authorize>
+<%@include file="../fragments/infoRole.jsp" %>
+<%@include file="../fragments/logOut.jsp" %>
+
 <%--@elvariable id="brand" type="pl.mateusz.Cars.entity.Brand"--%>
 <form:form modelAttribute="brand" method="post">
     <label for="group">Group</label>

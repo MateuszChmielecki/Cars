@@ -39,4 +39,9 @@ public class JpaGroupService implements GroupService{
     public void update(Group group) {
         groupRepository.save(group);
     }
+
+    @Override
+    public Group findByName(String name) {
+        return groupRepository.findByName(name);
+    }
 }

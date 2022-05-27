@@ -21,7 +21,6 @@ public class Group {
 
     }
 
-
     public Long getId() {
         return id;
     }

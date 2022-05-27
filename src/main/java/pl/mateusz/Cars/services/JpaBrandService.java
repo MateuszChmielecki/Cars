@@ -40,4 +40,9 @@ public class JpaBrandService implements BrandService{
     public void update(Brand brand) {
         brandRepository.save(brand);
     }
+
+    @Override
+    public Brand findByName(String name) {
+        return brandRepository.findByName(name);
+    }
 }

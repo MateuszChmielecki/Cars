@@ -7,18 +7,10 @@
     <title>List Cars</title>
 </head>
 <body>
-<sec:authorize access="isAuthenticated()">
-    <p>Zalogowany jako: <sec:authentication property="principal.username"/></p>
-    <p>Posiada role: <sec:authentication property="authorities"/></p>
-</sec:authorize>
+<%@include file="../fragments/infoRole.jsp" %>
+<%@include file="../fragments/logOut.jsp" %>
 <%--@elvariable id="cars" type="java.util.List<pl.mateusz.Cars.entity.Car>"--%>
 <table>
-    <sec:authorize access="isAuthenticated()">
-    <form action="<c:url value="/logout"/>" method="post">
-        <input class="fa fa-id-badge" type="submit" value="Wyloguj">
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    </form>
-    </sec:authorize>
     <tr>
         <td>ID: </td>
         <td>Group name: </td>
@@ -45,15 +37,15 @@
             <td>${item.carSegment}</td>
             <td>${item.carPicture}</td>
             <sec:authorize access="hasRole('ADMIN')">
-            <td><a href="/safetyDeleteCar/${item.id}">delete</a></td>
-            <td><a href="/updateCar/${item.id}">update</a></td>
+            <td><a href="/Admin/safetyDeleteCar/${item.id}">delete</a></td>
+            <td><a href="/Admin/updateCar/${item.id}">update</a></td>
             </sec:authorize>
         </tr>
     </c:forEach>
 
     <sec:authorize access="hasRole('ADMIN')">
         <tr>
-            <td><a href="/Cars/addCar">Add Car</a></td>
+            <td><a href="/Admin/addCar">Add Car</a></td>
         </tr>
     </sec:authorize>
     <tr>

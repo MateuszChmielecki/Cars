@@ -4,14 +4,12 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Delete Car</title>
 </head>
 <body>
-<sec:authorize access="isAuthenticated()">
-    <p>Zalogowany jako: <sec:authentication property="principal.username"/></p>
-    <p>Posiada role: <sec:authentication property="authorities"/></p>
-</sec:authorize>
-<a href="/Cars/deleteCar/${id}">USUN</a>
+<%@include file="../fragments/infoRole.jsp" %>
+<%@include file="../fragments/logOut.jsp" %>
+<a href="/Admin/deleteCar/${id}">USUN</a>
 <a href="/Cars/listCar">NIE USUWAJ</a>
 
 </body>
