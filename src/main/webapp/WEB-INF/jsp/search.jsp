@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Search Car</title>
@@ -15,10 +14,10 @@
 <%@include file="fragments/logOut.jsp" %>
 How do you want find Cars?
 <br>
-<form name="search" action="search" method="post">
-    <label for="search">Choose a search option:</label>
+<form:form name="searchCar" action="search" method="post">
+    <label for="searchCar">Choose a search option:</label>
 
-    <select name="search" id="search">
+    <select name="searchCar" id="searchCar">
         <option value="byModel">By model</option>
         <option value="byCode">By model code</option>
         <option value="byBrand">By brand</option>
@@ -28,7 +27,7 @@ How do you want find Cars?
     <input type="text" name="query"/>
 
     <button type="submit">search</button>
-</form>
+</form:form>
 
 </body>
 </html>
